@@ -229,7 +229,7 @@ module Axlsx
     def get_valid_attributes
       attributes = [:allowBlank, :error, :errorStyle, :errorTitle, :prompt, :promptTitle, :showErrorMessage, :showInputMessage, :sqref, :type ]
 
-      if [:whole, :decimal, :data, :time, :textLength].include?(@type)
+      if [:whole, :decimal, :data, :time, :textLength, :date].include?(@type)
         attributes << [:operator, :formula1]
         attributes << [:formula2] if [:between, :notBetween].include?(@operator)
       elsif @type == :list
